@@ -3,8 +3,8 @@ include README.md
 include LICENSE.md
 include pyproject.toml
 
-# Include all Python files in the trafapy package
-recursive-include trafapy *.py
+# Include all Python files in the socstatspy package
+recursive-include socstatspy *.py
 
 # Exclude test files and directories
 recursive-exclude tests *
