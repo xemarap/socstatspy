@@ -23,7 +23,7 @@ This package provides a convenient interface to access Swedish health and social
 ## Installation
 
 ```bash
-pip install socstatspy
+pip install git+https://github.com/xemarap/socstatspy.git
 ```
 
 Or install from source:
@@ -115,6 +115,9 @@ df_enriched = client.get_data_as_dataframe(
 
 ### 4. Cache Management
 
+The socstatspy wrapper uses in memory caching for retrieved metadata, it is not persisted to disk.
+The cache persists only as long as the client object exists.
+
 ```python
 # Clear metadata cache if needed
 client.data_fetcher.clear_cache()
@@ -127,7 +130,7 @@ print(f"Total variables: {cache_info['total_variables']}")
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit an Issue or a Pull Request.
 
 ## License
 
@@ -150,14 +153,10 @@ All dependency licenses are available in the `LICENSES/` directory.
 ## Acknowledgments
 
 - Data provided by Socialstyrelsen (The National Board of Health and Welfare)
-- API documentation: https://sdb.socialstyrelsen.se/api
-
-## Disclaimer
-
-This is an unofficial wrapper for the Socialstyrelsen API. The package is not affiliated with or endorsed by Socialstyrelsen.
+- API documentation: https://sdb.socialstyrelsen.se/sdbapi.aspx
 
 ## Support
 
 For issues and questions:
-- GitHub Issues: https://github.com/yourusername/socstatspy/issues
-- API Documentation: https://sdb.socialstyrelsen.se/api
+- GitHub Issues: https://github.com/xemarap/socstatspy/issues
+- API Documentation: https://sdb.socialstyrelsen.se/sdbapi.aspx
